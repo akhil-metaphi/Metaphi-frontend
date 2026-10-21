@@ -1,0 +1,758 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.login-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f5f5f5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 90px 15px;
+
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.login-card {
+  width: 82%;
+  max-width: 1100px;
+  min-height: 720px;
+
+  background: #ffffff;
+
+  border-radius: 5px;
+
+  overflow: hidden;
+
+  display: flex;
+
+  margin: 0 auto;
+
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================
+   LEFT BRANDING SECTION
+========================================= */
+
+.branding-section {
+  width: 48%;
+
+  background: #211d25;
+
+  display: flex;
+
+  align-items: stretch;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  position: relative;
+}
+
+
+.branding-content {
+  width: 100%;
+  height: 100%;
+
+  padding: 55px 20px 12px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  position: relative;
+}
+
+
+/* =========================================
+   CIRCLE EFFECT
+========================================= */
+
+.logo-effect {
+  width: 500px;
+  height: 500px;
+
+  max-width: 100%;
+  max-height: 500px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  margin-top: 5px;
+}
+
+
+.circle {
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  box-sizing: border-box;
+}
+
+
+/* Outer circle */
+
+.circle-1 {
+  width: 500px;
+  height: 500px;
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+
+/* Second circle */
+
+.circle-2 {
+  width: 90%;
+  height: 90%;
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+
+/* Third circle */
+
+.circle-3 {
+  width: 90%;
+  height: 90%;
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+
+/* Logo */
+
+.circle-3 img {
+  width: 340px;
+  max-width: 80%;
+
+  height: auto;
+
+  display: block;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+
+/* =========================================
+   COPYRIGHT
+========================================= */
+
+.copyright {
+  margin: 0 0 2px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 15px;
+
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   RIGHT LOGIN SECTION
+========================================= */
+
+.login-section {
+  width: 52%;
+
+  background: #ffffff;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   LOGIN CONTENT
+========================================= */
+
+.login-content {
+  width: 100%;
+
+  max-width: 500px;
+
+  padding: 165px 35px 45px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   MOBILE / TOP LOGO
+========================================= */
+
+.mobile-logo {
+  display: none;
+
+  width: 100%;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.mobile-logo img {
+  display: block;
+
+  width: 280px;
+
+  max-width: 100%;
+
+  height: auto;
+}
+
+
+/* =========================================
+   WELCOME SECTION
+========================================= */
+
+.welcome-section {
+  text-align: center;
+}
+
+.welcome-section h1 {
+  margin: 0;
+
+  color: #111111;
+
+  font-size: 25px;
+
+  line-height: 1.3;
+
+  font-weight: 600;
+}
+
+.welcome-section p {
+  margin: 9px 0 0;
+
+  color: #85869a;
+
+  font-size: 16px;
+
+  line-height: 1.5;
+
+  font-weight: 400;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.login-form {
+  width: 430px;
+
+  max-width: 100%;
+
+  margin: 67px auto 0;
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #111111;
+
+  font-size: 15px;
+
+  line-height: 1.2;
+
+  font-weight: 500;
+}
+
+.form-group label span {
+  color: #e74c3c;
+}
+
+
+/* =========================================
+   PASSWORD HEADER
+========================================= */
+
+.password-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.password-header label {
+  margin-bottom: 9px;
+}
+
+.password-header a {
+  margin-bottom: 9px;
+
+  color: #85869a;
+
+  font-size: 14px;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+.password-header a:hover {
+  color: #3969e7;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.form-group input[type="tel"],
+.password-wrapper input {
+  width: 100%;
+
+  height: 48px;
+
+  padding: 0 18px;
+
+  border: 1px solid #dce0eb;
+
+  border-radius: 5px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #212529;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 15px;
+
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder,
+.password-wrapper input::placeholder {
+  color: #9698aa;
+}
+
+.form-group input:focus,
+.password-wrapper input:focus {
+  border-color: #3969e7;
+
+  box-shadow: 0 0 0 1px rgba(57, 105, 231, 0.08);
+}
+
+
+/* =========================================
+   PASSWORD
+========================================= */
+
+.password-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+.password-wrapper input {
+  padding-right: 45px;
+}
+
+
+/* Password eye */
+
+.password-toggle {
+  position: absolute;
+
+  right: 5px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 35px;
+  height: 38px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #8a8d9d;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+}
+
+
+/* =========================================
+   REMEMBER ME
+========================================= */
+
+.remember-me {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 22px;
+
+  font-size: 16px;
+}
+
+.remember-me input {
+  width: 19px;
+  height: 19px;
+
+  margin: 0;
+
+  cursor: pointer;
+}
+
+.remember-me label {
+  cursor: pointer;
+
+  color: #111111;
+}
+
+
+/* =========================================
+   SIGN IN BUTTON
+========================================= */
+
+.button-container {
+  margin-top: 28px;
+}
+
+.sign-in-button {
+  width: 100%;
+
+  min-height: 54px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background: #3969e7;
+
+  color: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.sign-in-button:hover {
+  background: #2f5bd1;
+}
+
+
+/* =========================================
+   100% DESKTOP
+   SINGLE COLUMN
+========================================= */
+
+/*
+   This is the layout shown in the
+   original website at 100% zoom.
+*/
+
+@media (max-width: 1399px) {
+
+  .login-page {
+    min-height: 100vh;
+
+    padding: 50px 15px;
+
+    align-items: center;
+  }
+
+
+  /* Main white card */
+
+  .login-card {
+    width: 82%;
+
+    max-width: 1100px;
+
+    min-height: 700px;
+
+    display: block;
+
+    margin: 0 auto;
+  }
+
+
+  /* Hide dark branding panel */
+
+  .branding-section {
+    display: none;
+  }
+
+
+  /* Full white section */
+
+  .login-section {
+    width: 100%;
+
+    display: block;
+  }
+
+
+  /* Show logo */
+
+  .mobile-logo {
+    display: flex;
+
+    padding-top: 28px;
+  }
+
+  .mobile-logo img {
+    width: 280px;
+  }
+
+
+  /* Login content */
+
+  .login-content {
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    padding: 82px 35px 45px;
+  }
+
+
+  .login-form {
+    width: 430px;
+
+    max-width: 100%;
+
+    margin-top: 67px;
+  }
+}
+
+
+/* =========================================
+   SMALLER DESKTOP / 90% VIEW
+========================================= */
+
+/*
+   At wider viewport sizes the original
+   switches back to the two-column layout.
+*/
+
+@media (min-width: 1400px) {
+
+  .login-page {
+    padding: 50px 15px;
+  }
+
+  .login-card {
+    width: 82%;
+
+    max-width: 1100px;
+
+    min-height: 720px;
+
+    display: flex;
+  }
+
+  .branding-section {
+    display: flex;
+  }
+
+  .login-section {
+    width: 52%;
+
+    display: flex;
+  }
+
+  .mobile-logo {
+    display: none;
+  }
+
+  .login-content {
+    padding: 165px 35px 45px;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+  .login-page {
+    padding: 20px 15px;
+  }
+
+  .login-card {
+    width: 94%;
+
+    min-height: auto;
+  }
+
+  .login-content {
+    padding: 60px 25px 45px;
+  }
+
+  .mobile-logo {
+    padding-top: 25px;
+  }
+
+  .mobile-logo img {
+    width: 240px;
+  }
+
+  .welcome-section h1 {
+    font-size: 23px;
+  }
+
+  .welcome-section p {
+    font-size: 14px;
+  }
+
+  .login-form {
+    margin-top: 50px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+  .login-page {
+    padding: 15px;
+  }
+
+  .login-card {
+    width: 100%;
+
+    min-height: 650px;
+  }
+
+  .mobile-logo {
+    padding-top: 28px;
+  }
+
+  .mobile-logo img {
+    width: 220px;
+  }
+
+  .login-content {
+    padding: 50px 25px 40px;
+  }
+
+  .welcome-section h1 {
+    font-size: 22px;
+  }
+
+  .welcome-section p {
+    font-size: 14px;
+  }
+
+  .login-form {
+    margin-top: 45px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .password-header a {
+    font-size: 12px;
+  }
+
+  .remember-me {
+    font-size: 14px;
+  }
+
+  .sign-in-button {
+    min-height: 50px;
+  }
+}

@@ -1,0 +1,367 @@
+/* UserPermissions.css */
+
+.page-container {
+  background-color: #f1f5f9;
+  min-height: calc(100vh - 60px);
+  font-family: 'Inter', 'Poppins', sans-serif;
+  color: #111827;
+}
+
+.page-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+/* Tabs Layout (Matches UserForm) */
+.custom-tabs-container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 16px;
+}
+
+.custom-tab {
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.custom-tab:hover:not(.disabled) {
+  color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.custom-tab.active {
+  color: #3b82f6;
+  border: 1px solid #3b82f6;
+  background-color: #ffffff;
+}
+
+.custom-tab.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Header Row */
+.permissions-header-row {
+  margin-bottom: 24px;
+}
+
+.permissions-main-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+/* Global Checkbox */
+.permissions-global-check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.global-check-label {
+  font-weight: 500;
+  color: #111827;
+}
+
+/* Custom Checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  min-height: 18px;
+  width: 18px;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  border-color: #3b82f6;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Accordion */
+.accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accordion-section {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #f9fafb;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+  background-color: #f3f4f6;
+}
+
+.accordion-header.open {
+  background-color: #eff6ff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.accordion-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.module-title {
+  font-weight: 500;
+  color: #374151;
+}
+
+.accordion-header.open .module-title {
+  color: #1d4ed8;
+}
+
+.accordion-arrow {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.accordion-body {
+  padding: 24px;
+  background-color: #fff;
+}
+
+/* Table */
+.permissions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.permissions-table th {
+  background-color: transparent;
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: left;
+  padding: 0 16px 16px 16px;
+  border-bottom: none;
+}
+
+.permissions-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.permissions-table tr:last-child td {
+  border-bottom: none;
+}
+
+.submodule-name-cell {
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Actions */
+.permissions-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.btn-wizard-cancel {
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  color: #374151;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-wizard-cancel:hover {
+  background-color: #f9fafb;
+}
+
+.btn-wizard-save {
+  padding: 10px 20px;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-wizard-save:hover {
+  background-color: #2563eb;
+}
+
+.btn-wizard-save:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* Banners */
+.error-banner {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 24px;
+  border: 1px solid #fecaca;
+}
+
+.success-banner {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 24px;
+  border: 1px solid #bfdbfe;
+}
+
+/* Toast */
+.toast-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.toast-notification span {
+  font-weight: 500;
+  color: #111827;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.toast-close:hover {
+  color: #4b5563;
+}
+
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: #3b82f6;
+  animation: progress 2s linear forwards;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes progress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+.permissions-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  color: #6b7280;
+  font-weight: 500;
+  gap: 16px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f4f6;
+  border-top: 3px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

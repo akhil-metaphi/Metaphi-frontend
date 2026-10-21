@@ -1,0 +1,141 @@
+/* SelectWithClear.css */
+
+.select-control-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select-input-field {
+  width: 100%;
+  padding: 9px 36px 9px 12px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  color: #111827;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  outline: none;
+  height: 38px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.select-input-field::placeholder {
+  color: #9ca3af;
+}
+
+.select-input-field:focus,
+.select-input-field.open {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.select-input-field:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+  color: #9ca3af;
+}
+
+.select-input-field.input-error {
+  border-color: #ef4444 !important;
+}
+
+/* Clear button: hidden by default, visible on wrapper HOVER only */
+.select-clear-btn {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  color: #4b5563;
+  border: none;
+  font-size: 11px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+  line-height: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.select-control-wrapper:hover .select-clear-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+.select-clear-btn:hover {
+  background-color: #d1d5db;
+  color: #111827;
+}
+
+.select-arrow-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: #6b7280;
+  cursor: pointer;
+  user-select: none;
+  pointer-events: auto;
+  transition: transform 0.2s ease;
+}
+
+.select-arrow-btn.open {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Floating Popover Options Menu */
+.select-dropdown-popover {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  max-height: 220px;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+  padding: 4px 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.select-popover-item {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #111827;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.select-popover-item:hover,
+.select-popover-item.highlighted {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.select-popover-item.selected {
+  font-weight: 600;
+  background-color: #f3f4f6;
+}
+
+.select-no-results {
+  padding: 12px;
+  font-size: 13px;
+  color: #9ca3af;
+  text-align: center;
+}
