@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 :root {
-  --primary-color: #3b82f6;
-  --primary-hover: #2563eb;
+  --primary-color: #3969e7;
+  --primary-hover: #2652c4;
   --primary-light: #eff6ff;
   --text-primary: #111827;
   --text-body: #374151;
@@ -10,10 +10,10 @@
   --text-muted: #6b7280;
   --border-color: #e5e7eb;
   --border-light: #f1f5f9;
-  --table-header-bg: #f8fafc;
+  --table-header-bg: #eef0f7;
   --bg-card: #ffffff;
   --bg-page: #f0f2f5;
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --btn-height: 36px;
   --input-height: 38px;
   --radius-sm: 4px;

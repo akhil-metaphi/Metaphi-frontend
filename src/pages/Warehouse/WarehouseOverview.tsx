@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { fetchWarehouseOverview, fetchWarehouseStock, fetchMasterList } from "../../services/api";
+import WarehouseEmptyState from "./WarehouseEmptyState";
+import "./Warehouse.css";
 import "../../components/MasterListTable/MasterListTable.css";
 
 const WarehouseOverview: React.FC = () => {
@@ -249,14 +251,13 @@ const WarehouseOverview: React.FC = () => {
             </div>
 
             {/* Dynamic Warehouse Selector */}
-            <div className="search-box">
+            <div className="warehouse-select-box">
               <select
                 value={selectedWarehouse}
                 onChange={(e) => {
                   setSelectedWarehouse(e.target.value);
                   setPage(1);
                 }}
-                style={{ height: "36px", padding: "0 12px", borderRadius: "6px", border: "1px solid #e2e8f0", outline: "none", fontSize: "13px", color: "#495057", background: "#fff", cursor: "pointer", minWidth: "220px" }}
               >
                 <option value="">All Warehouses</option>
                 {warehouses.map((w) => (
@@ -265,6 +266,11 @@ const WarehouseOverview: React.FC = () => {
                   </option>
                 ))}
               </select>
+              <span className="warehouse-select-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M7 10l5 5 5-5z" />
+                </svg>
+              </span>
             </div>
 
             {/* Export */}
@@ -275,18 +281,20 @@ const WarehouseOverview: React.FC = () => {
         </div>
 
         {/* Tabs Bar */}
-        <div className="custom-tabs-container">
+        <div className="warehouse-tabs-container">
           <button
-            className={`custom-tab ${activeTab === "inStock" ? "active" : ""}`}
+            type="button"
+            className={`warehouse-tab ${activeTab === "inStock" ? "active" : ""}`}
             onClick={() => setActiveTab("inStock")}
           >
-            In Stock
+            <span>In Stock</span>
           </button>
           <button
-            className={`custom-tab ${activeTab === "dailyLog" ? "active" : ""}`}
+            type="button"
+            className={`warehouse-tab ${activeTab === "dailyLog" ? "active" : ""}`}
             onClick={() => setActiveTab("dailyLog")}
           >
-            Daily Log
+            <span>Daily Log</span>
           </button>
         </div>
 
@@ -424,8 +432,11 @@ const WarehouseOverview: React.FC = () => {
                       </tr>
                     ) : paginatedStock.length === 0 ? (
                       <tr>
-                        <td colSpan={9} style={{ textAlign: "center", padding: "36px", color: "#878a99" }}>
-                          No records found.
+                        <td colSpan={9} style={{ padding: 0 }}>
+                          <WarehouseEmptyState
+                            title="No stock records found"
+                            subtitle={search ? "No stock items match your search or filter criteria." : "There are currently no stock records in the selected warehouse."}
+                          />
                         </td>
                       </tr>
                     ) : (
@@ -501,9 +512,56 @@ const WarehouseOverview: React.FC = () => {
             </>
           )}
           {activeTab === "dailyLog" && (
-            <div style={{ textAlign: "center", padding: "40px", color: "#878a99", fontSize: "14px" }}>
-              Daily log functionality is under construction.
-            </div>
+            <>
+              <div className="table-responsive">
+                <table className="custom-user-table">
+                  <thead>
+                    <tr>
+                      <th style={{ width: "65px" }}>Sr. No.</th>
+                      <th>Date</th>
+                      <th>Warehouse</th>
+                      <th>Item Name</th>
+                      <th>Opening Stock</th>
+                      <th>Inward</th>
+                      <th>Dispatched</th>
+                      <th>Closing Stock</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td colSpan={8} style={{ padding: 0 }}>
+                        <WarehouseEmptyState
+                          title="No daily log records"
+                          subtitle="There are no daily stock movement logs available."
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Pagination Shell */}
+              <div className="table-pagination-custom">
+                <div>Showing 0 - 0 of 0 Results</div>
+
+                <div className="pagination-right-controls">
+                  <div className="pagination-controls">
+                    <button className="page-btn" disabled>&lt;</button>
+                    <button className="page-btn active">1</button>
+                    <button className="page-btn" disabled>&gt;</button>
+                  </div>
+
+                  <div className="show-records-bottom">
+                    <span>Show</span>
+                    <select value={10} disabled style={{ opacity: 0.7 }}>
+                      <option value={10}>10</option>
+                      <option value={20}>20</option>
+                      <option value={50}>50</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </>
           )}
         </div>
       </div>
